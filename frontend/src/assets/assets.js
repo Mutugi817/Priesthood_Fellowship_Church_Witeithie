@@ -1,7 +1,7 @@
 import logo from './Priesthood Fellowship Church logo.png';
 import bishop from './Bishop_Mwangi_Zakayo.png';
 import archbiship from './Archbishop_JJ_Gitahi.png';
-import apostle from './Apostle_Consolata.PNG';
+import apostle from './Apostle_Consolata.png';
 import apostle_consolata from './Apostle_Consolata_Portrait.png';
 import pastor_symon from './Pastor_Symon.png';
 import pastor_patricia from './Pastor_Patricia.png';
