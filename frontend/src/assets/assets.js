@@ -29,17 +29,17 @@ const assets = {
     },
   {
     title: "His Eminence Archbishop JJ Gitahi",
-    sub: "Join us for a powerful prophetic session and word of revelation. Sunday Main Service starts 9:30 AM — 12:30 PM.",
+    sub: "",
     img: archbiship
   },
   {
     title: "His Grace Bishop Mwangi Zakayo",
-    sub: "Step into your season of breakthrough with healing and deliverance. Wednesday Mid-week Service starts 5:30 PM — 8:00 PM.",
+    sub: "",
     img: bishop
   },
   {
     title: "Apostle Consolata Wambui",
-    sub: "An empowering session of prayer, worship, and biblical truth. Saturday Special Service starts 10:00 AM — 1:00 PM.",
+    sub: "",
     img: apostle
   }
   ];
