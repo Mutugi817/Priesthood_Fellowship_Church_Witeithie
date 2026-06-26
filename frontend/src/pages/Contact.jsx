@@ -36,7 +36,7 @@ const Contact = () => {
 
   return (
     <div className="animate-in fade-in">
-      <PageHeader title="Reach The Secretariat" subtitle="Have inquiries about office hours, counseling requests, or memberships?" />
+      <PageHeader title="Reach The Clergy" subtitle="Have inquiries about office hours, counseling requests, or memberships?" />
       <div className="max-w-7xl mx-auto px-4 py-16 grid grid-cols-1 lg:grid-cols-2 gap-12">
         <div>
           <h3 className="text-2xl font-bold mb-6 text-slate-900 dark:text-white uppercase tracking-wide">Send Correspondence</h3>

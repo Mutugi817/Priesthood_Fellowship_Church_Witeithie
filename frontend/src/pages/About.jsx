@@ -8,7 +8,7 @@ const About = () => (
     
     {/* Page Header Section */}
     <PageHeader 
-      title="Who We Are" 
+      title="About The Church" 
       subtitle="Raising a royal priesthood built on truth and apostolic mandate." 
     />
 

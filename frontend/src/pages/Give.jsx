@@ -8,7 +8,7 @@ import { Landmark } from 'lucide-react';
 const Give = () => {
   return (
     <div className="animate-in fade-in">
-      <PageHeader title="Altar Covenant Partnering" subtitle="Support church building expansions and missionary Huduma campaigns." />
+      <PageHeader title="Altar Covenant" subtitle="Support church building expansions and missionary Huduma campaigns." />
       <div className="max-w-3xl mx-auto px-4 py-16">
         <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-8 border-t-4 border-[#800000]">
           <h3 className="text-2xl font-bold text-center mb-8 text-[#800000] dark:text-[#87CEEB] uppercase tracking-wide">Secured Channels</h3>
