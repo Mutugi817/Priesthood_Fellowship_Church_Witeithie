@@ -1,5 +1,3 @@
-/** @format */
-
 import React, { useContext } from 'react';
 import HeroSlider from '../components/HeroSlider.jsx';
 import { RouteContext } from '../context/AppContext.jsx';
@@ -15,9 +13,9 @@ const Home = () => {
     { title: "Wednesday Midweek Fellowship", time: "5:00 PM — 8:00 PM", desc: "Midweek spiritual fuel focusing on systematic worship and intense corporate prayer sessions." },
   { 
   title: "Thursday Huduma Ministry", 
-  time: "7:00 AM — 12:00 PM", 
+  time: "7:00 AM — 11:00 PM", 
   desc: "A dedicated time for personal encounters where God speaks directly to individuals through one-on-one sessions with the Apostle, complemented by mercy ministry outreaches, counseling, and local community service." },
-    { title: "Monthly Midnight Kesha", time: "Every First Friday (9:00 PM)", desc: "A fiery night vigil of deliverance, corporate intercessory prayers, and deep spiritual declarations." }
+    { title: "Monthly Midnight Kesha", time: "Every First Friday (9:00 PM - 5:00 AM)", desc: "A fiery night vigil of deliverance, corporate intercessory prayers, and deep spiritual declarations." }
   ];
 
   return (
