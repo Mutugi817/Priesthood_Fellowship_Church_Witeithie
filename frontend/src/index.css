@@ -8,3 +8,10 @@ html, body {
     max-width: 100%;
     overflow-x: hidden;
 }
+
+
+.hero-content {
+    position: absolute;
+    bottom: 0;
+    z-index: 999;
+}

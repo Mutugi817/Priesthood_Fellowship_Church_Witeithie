@@ -17,19 +17,19 @@ const HeroSlider = () => {
       {slides.map((s, idx) => (
         <div 
           key={idx}
-          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${idx === slide ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+          className={`absolute h-full inset-0 transition-opacity duration-1000 ease-in-out ${idx === slide ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
         >
           <img 
             src={s.img} 
             alt={s.title}
-            className="w-full h-full object-cover opacity-35 transform scale-105 transition-transform duration-[10000ms]"
+            className="w-full h-full object-cover opacity-35 transform scale-105 transition-transform duration-10000"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent" />
-          <div className="absolute inset-0 flex flex-col justify-center items-center px-4 text-center max-w-5xl mx-auto z-10">
+          {/* <div className="relative h-full inset-0 bg-linear-to-t from-slate-950 via-slate-900/40 to-transparent" /> */}
+          <div className="hero-content absolute inset-0 flex flex-col justify-end pb-12 items-center px-4 text-center max-w-5xl mx-auto z-10">
             <span className="py-1 px-4 rounded-full bg-rose-900/65 text-slate-100 font-bold tracking-widest text-xs mb-4 uppercase border border-[#448ee4]/40 animate-fade-in">
               PRIESTHOOD FELLOWSHIP CHURCH
             </span>
-            <h1 className="text-4xl sm:text-4xl font-extrabold text-white tracking-tight m b-4 select-none uppercase">
+            <h1 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight mb-2 select-none uppercase ">
               {s.title}
             </h1>
             <p className="text-base sm:text-xl text-slate-200 max-w-2xl select-none font-semibold">
