@@ -25,7 +25,7 @@ const HeroSlider = () => {
             className="w-full h-full object-cover opacity-35 transform scale-105 transition-transform duration-10000"
           />
           {/* <div className="relative h-full inset-0 bg-linear-to-t from-slate-950 via-slate-900/40 to-transparent" /> */}
-          <div className="hero-content absolute inset-0 flex flex-col justify-end pb-6 items-center px-4 text-center max-w-5xl mx-auto z-10">
+          <div className="hero-content absolute inset-0 flex flex-col justify-end pb-5 items-center px-4 text-center max-w-5xl mx-auto z-10">
             <span className="py-1 px-4 rounded-full bg-rose-900/65 text-slate-100 font-bold tracking-widest text-xs mb-4 uppercase border border-[#448ee4]/40 animate-fade-in">
               PRIESTHOOD FELLOWSHIP CHURCH
             </span>

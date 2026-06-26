@@ -47,7 +47,7 @@ const Footer = () => {
             <li className="flex justify-between border-b border-slate-800 pb-1.5"><span>Sunday 1st Service</span> <span className="font-semibold text-white">7:00 AM - 9:00 AM</span></li>
             <li className="flex justify-between border-b border-slate-800 pb-1.5"><span>Sunday 2nd Service</span> <span className="font-semibold text-white">9:00 AM - 1:30 PM</span></li>
             <li className="flex justify-between border-b border-slate-800 pb-1.5"><span>Wednesday Fellowship</span> <span className="font-semibold text-white">5:00 PM - 8:00 PM</span></li>
-            <li className="flex justify-between border-b border-slate-800 pb-1.5"><span>Hudama Thursday</span> <span className="font-semibold text-white">7:00 PM - 11:00 AM</span></li>
+            <li className="flex justify-between border-b border-slate-800 pb-1.5"><span>Huduma Thursday</span> <span className="font-semibold text-white">7:00 PM - 11:00 AM</span></li>
             <li className="flex justify-between pb-1.5"><span>Friday Monthly Kesha</span> <span className="font-semibold text-white">9:00 PM - 5:00 AM</span></li>
           </ul>
         </div>
