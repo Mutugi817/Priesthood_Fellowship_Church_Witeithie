@@ -13,7 +13,7 @@ function App() {
                         <div>
                             <NoticeSlider />
                             <Navbar />
-                            <main>
+                            <main className="relative top-10">
                                 <PageRouter />
                             </main>
                             <Footer />

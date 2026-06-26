@@ -62,7 +62,7 @@ const clergyData = [
         image: evangelist_mary,
     },
     {
-    name: 'Pastor Patricia',
+    name: 'Pastor Patricia Njambi',
     role: 'Pastor',
     image: pastor_patricia
   }
