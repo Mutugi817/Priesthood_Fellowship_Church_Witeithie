@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { AuthContext, RouteContext, ThemeContext } from "../context/AppContext";
-import { LogIn, LogOut, Menu, Moon, Sun } from "lucide-react";
+import { LogIn, LogOut, Menu, Moon, Sun, X } from "lucide-react";
 import { assets } from "../assets/assets";
 
 const Navbar = () => {
@@ -97,12 +97,12 @@ const Navbar = () => {
           </div>
 
           <div className="lg:hidden flex items-center gap-2">
-            <button onClick={toggleTheme} className="p-2 rounded-full text-slate-600 dark:text-slate-300">
+            {/* <button onClick={toggleTheme} className="p-2 rounded-full text-slate-600 dark:text-slate-300">
               {theme === 'dark' ? <Sun size={20} className="text-[#448ee4]" /> : <Moon size={20} className="text-[#800000]" />}
-            </button>
+            </button> */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-slate-600 dark:text-slate-300 hover:text-[#800000] p-2"
+              className="text-slate-600 cursor-pointer dark:text-slate-300 hover:text-[#800000] p-2"
             >
               {isOpen ? <X size={26} /> : <Menu size={26} />}
             </button>
