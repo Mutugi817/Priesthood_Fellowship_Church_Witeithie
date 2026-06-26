@@ -27,7 +27,7 @@ const HeroSlider = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent" />
           <div className="absolute inset-0 flex flex-col justify-center items-center px-4 text-center max-w-5xl mx-auto z-10">
             <span className="py-1 px-4 rounded-full bg-rose-900/65 text-slate-100 font-bold tracking-widest text-xs mb-4 uppercase border border-[#448ee4]/40 animate-fade-in">
-              PRIESTHOOD FELLOWSHIP
+              PRIESTHOOD FELLOWSHIP CHURCH
             </span>
             <h1 className="text-4xl sm:text-6xl font-extrabold text-white tracking-tight mb-4 select-none uppercase">
               {s.title}

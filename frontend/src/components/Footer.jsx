@@ -36,21 +36,23 @@ const Footer = () => {
           <ul className="space-y-3.5 text-sm">
             <li className="flex items-start gap-2 text-slate-400"><MapPin size={16} className="text-[#800000] shrink-0 mt-0.5"/> Witeithie, Juja, Thika Road</li>
             <li className="flex items-center gap-2 text-slate-400"><Phone size={16} className="text-[#800000] shrink-0"/><a href="tel:+254758931179">0758 931 179</a></li>
-            <li className="flex items-center gap-2 text-slate-400"><Mail size={16} className="text-[#800000] shrink-0"/><a href="mailto:consolatawambui377@gmail.com">consolatawambui377@gmail.com</a></li>
+            <li className="flex items-center gap-2 text-slate-400"><Phone size={16} className="text-[#800000] shrink-0"/><a href="tel:+254758931179">0725 590 163</a></li>
+            <li className="flex items-center gap-2 text-slate-400"><Mail size={16} className="text-[#800000] shrink-0"/><a href="mailto:consolatawambui377@gmail.com">wambuiconsolata377@gmail.com</a></li>
           </ul>
         </div>
 
         <div>
           <h3 className="text-[#448ee4] font-bold text-sm uppercase tracking-widest mb-5">Weekly Services</h3>
           <ul className="space-y-2 text-xs">
-            <li className="flex justify-between border-b border-slate-800 pb-1.5"><span>Sunday 1st Service</span> <span className="font-semibold text-white">7:00 AM</span></li>
-            <li className="flex justify-between border-b border-slate-800 pb-1.5"><span>Sunday 2nd Service</span> <span className="font-semibold text-white">9:00 AM</span></li>
-            <li className="flex justify-between border-b border-slate-800 pb-1.5"><span>Wednesday Fellowship</span> <span className="font-semibold text-white">5:00 PM</span></li>
-            <li className="flex justify-between pb-1.5"><span>First Friday Night Vigil</span> <span className="font-semibold text-white">Monthly Kesha</span></li>
+            <li className="flex justify-between border-b border-slate-800 pb-1.5"><span>Sunday 1st Service</span> <span className="font-semibold text-white">7:00 AM - 9:00 AM</span></li>
+            <li className="flex justify-between border-b border-slate-800 pb-1.5"><span>Sunday 2nd Service</span> <span className="font-semibold text-white">9:00 AM - 1:30 PM</span></li>
+            <li className="flex justify-between border-b border-slate-800 pb-1.5"><span>Wednesday Fellowship</span> <span className="font-semibold text-white">5:00 PM - 8:00 PM</span></li>
+            <li className="flex justify-between border-b border-slate-800 pb-1.5"><span>Hudama Thursday</span> <span className="font-semibold text-white">7:00 PM - 11:00 AM</span></li>
+            <li className="flex justify-between pb-1.5"><span>Friday Monthly Kesha</span> <span className="font-semibold text-white">9:00 PM - 5:00 AM</span></li>
           </ul>
         </div>
       </div>
-      <div className="flex items-center justify-between max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-slate-800 text-slate-500">
+      <div className="flex items-center justify-between max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-slate-800 text-slate-500 text-sm sm:flex-col">
         <p className='hover:text-[#448ee4] transition-colors'>&copy; {new Date().getFullYear()} Priesthood Fellowship Church Witeithie. All rights reserved. Equipped for ministry.</p>
         <a className='hover:text-[#448ee4] transition-colors' href="tel:+254115793480" className="text-left">Contact developer: 0115 793 480</a>
       </div>

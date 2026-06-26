@@ -12,8 +12,11 @@ const Home = () => {
     { title: "Sunday Devotional Service", time: "7:00 AM — 9:00 AM", desc: "An early morning intense atmosphere of worship, morning glory devotion, and deep biblical foundations." },
     { title: "Sunday Family Service", time: "9:00 AM — 1:30 PM", desc: "Our main celebratory worship service designed for families, with full children church ministries and powerful sermons." },
     { title: "Tuesday Pastor Office Hours", time: "7:00 AM — 10:00 AM", desc: "Confidential counseling, guidance, and direct interaction with our church pastoral board." },
-    { title: "Wednesday Midweek Fellowship", time: "5:00 PM — 8:00 PM", desc: "Midweek spiritual fuel focusing on systematic Bible study, cell networks and intense corporate prayer sessions." },
-    { title: "Thursday Huduma Ministry", time: "7:00 AM — 12:00 PM", desc: "Mercy ministry outreaches, counseling setups, and local community service works." },
+    { title: "Wednesday Midweek Fellowship", time: "5:00 PM — 8:00 PM", desc: "Midweek spiritual fuel focusing on systematic worship and intense corporate prayer sessions." },
+  { 
+  title: "Thursday Huduma Ministry", 
+  time: "7:00 AM — 12:00 PM", 
+  desc: "A dedicated time for personal encounters where God speaks directly to individuals through one-on-one sessions with the Apostle, complemented by mercy ministry outreaches, counseling, and local community service." },
     { title: "Monthly Midnight Kesha", time: "Every First Friday (9:00 PM)", desc: "A fiery night vigil of deliverance, corporate intercessory prayers, and deep spiritual declarations." }
   ];
 
