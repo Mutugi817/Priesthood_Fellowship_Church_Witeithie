@@ -42,7 +42,7 @@ const Navbar = () => {
             className="flex-shrink-0 flex items-center gap-3 cursor-pointer group"
             onClick={() => handleNav('home')}
           >
-            <div className="w-10 to-rose-900 rounded-xl flex items-center justify-center text-white font-bold text-xl group-hover:scale-105 transition-all shadow-md">
+            <div className="w-14 to-rose-900 rounded-xl flex items-center justify-center text-white font-bold text-xl group-hover:scale-105 transition-all shadow-md">
               <img src="https://d1csarkz8obe9u.cloudfront.net/uploads/thumbs/b152ba41d77fa8bd52b4c49ec1138bdf.png?" alt="logo" />
             </div>
             <div className="flex flex-col">
@@ -102,7 +102,7 @@ const Navbar = () => {
             </button> */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="absolute text-slate-600 cursor-pointer dark:text-slate-300 hover:text-[#800000] p-2"
+              className="text-slate-600 cursor-pointer dark:text-slate-300 hover:text-[#800000]"
             >
               {isOpen ? <X size={26} /> : <Menu size={26} />}
             </button>
