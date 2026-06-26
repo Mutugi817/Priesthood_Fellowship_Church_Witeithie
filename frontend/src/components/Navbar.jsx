@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { AuthContext, RouteContext, ThemeContext } from "../context/AppContext";
 import { LogIn, LogOut, Menu, Moon, Sun, X } from "lucide-react";
 import { assets } from "../assets/assets";
+import NoticeSlider from "./NoticeSlider";
 
 const Navbar = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -35,7 +36,8 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 z-50 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md shadow-md border-b border-slate-100 dark:border-slate-800 transition-colors duration-300">
+    <nav className="fixed w-full top-0 z-50 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md shadow-md border-b border-slate-100 dark:border-slate-800 transition-colors duration-300">
+      <NoticeSlider />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20 items-center">
           <div 
