@@ -29,7 +29,7 @@ const HeroSlider = () => {
             <span className="py-1 px-4 rounded-full bg-rose-900/65 text-slate-100 font-bold tracking-widest text-xs mb-4 uppercase border border-[#448ee4]/40 animate-fade-in">
               PRIESTHOOD FELLOWSHIP CHURCH
             </span>
-            <h1 className="text-4xl sm:text-6xl font-extrabold text-white tracking-tight mb-4 select-none uppercase">
+            <h1 className="text-4xl sm:text-4xl font-extrabold text-white tracking-tight m b-4 select-none uppercase">
               {s.title}
             </h1>
             <p className="text-base sm:text-xl text-slate-200 max-w-2xl select-none font-semibold">
