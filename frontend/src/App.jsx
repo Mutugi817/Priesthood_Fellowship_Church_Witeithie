@@ -1,5 +1,6 @@
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
+import NoticeSlider from "./components/NoticeSlider";
 import PageRouter from "./components/PageRouter";
 import { AuthProvider, RouteProvider, ThemeProvider } from "./context/AppContext";
 
@@ -10,8 +11,9 @@ function App() {
                 <AuthProvider>
                     <RouteProvider>
                         <div>
+                            <NoticeSlider />
                             <Navbar />
-                            <main className="relative top-10">
+                            <main className="">
                                 <PageRouter />
                             </main>
                             <Footer />
