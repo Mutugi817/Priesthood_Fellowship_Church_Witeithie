@@ -1,6 +1,4 @@
-/** @format */
-
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import PageHeader from '../components/PageHeader.jsx';
 import EmptyState from '../components/EmptyState.jsx';
 import { BookOpen } from 'lucide-react';
@@ -13,7 +11,7 @@ const Sermons = () => {
   useEffect(() => {
     const fetchSermons = async () => {
       try {
-        const res = await fetch(`${API_BASE}/sermons`);
+        const res = await fetch(`${API_BASE}/sermons`, {headers: {'ngrok-skip-browser-warning': true}});
         if (res.ok) {
           const data = await res.json();
           setSermons(data);
@@ -27,6 +25,27 @@ const Sermons = () => {
     fetchSermons();
   }, []);
 
+  const handleUrlConversion = (url) => {
+    if(!url) return '';
+
+    let videoId = '';
+
+    if(url.includes('youtube.com/watch')) {
+      const urlParams = new URLSearchParams(new URL(url).search);
+      videoId = urlParams.get('v');
+    } else if(url.includes('youtu.be/')) {
+      videoId = url.split('youtu.be/')[1]?.split('?')[0];
+    } else if(url.includes('youtube.come/embed/')) {
+      videoId = url.split('youtube.com/embed/')[1]?.split('?')[0];
+    }
+
+    if(videoId) {
+      return `https://www.youtube.com/embed/${videoId}`;
+    } else {
+      alert("Invalid YouTube URL. Please check the link!");
+    }
+  }
+
   return (
     <div className="animate-in fade-in">
       <PageHeader title="Sermon Archive" subtitle="Systematic biblical teachings to resource your home daily." />
@@ -38,8 +57,17 @@ const Sermons = () => {
         ) : sermons.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {sermons.map((s) => (
-              <div key={s._id} className="bg-white dark:bg-slate-800 rounded-2xl shadow-md border border-slate-100 dark:border-slate-700 p-6 flex flex-col justify-between">
-                <div>
+              <div key={s._id} className="bg-white dark:bg-slate-800 rounded-2xl shadow-md border border-slate-100 dark:border-slate-700 flex flex-col justify-between">
+                <iframe src={handleUrlConversion(s.video)} 
+                frameborder="0" 
+                className='w-full rounded-2xl h-full' 
+                allow='accelerometer; clipboard-write;
+                encrypted-media;
+                gyroscope;
+                picture-in-picture'
+                allowFullScreen
+                ></iframe>
+                <div className='p-6' >
                   <div className="flex justify-between items-start mb-4">
                     <span className="px-3 py-1 bg-rose-50 dark:bg-rose-950/40 text-[#800000] dark:text-rose-300 text-xs font-bold rounded-full">
                       {s.duration}
@@ -56,12 +84,12 @@ const Sermons = () => {
                     ))}
                   </div>
                 </div>
-                <a 
+                {/* <a 
                   href={s.link} 
                   className="w-full py-2.5 rounded-lg border border-[#800000]/20 text-[#800000] hover:bg-[#800000] hover:text-white dark:text-white text-center font-bold text-sm block transition-all"
                 >
                   Listen / Watch Altar
-                </a>
+                </a> */}
               </div>
             ))}
           </div>

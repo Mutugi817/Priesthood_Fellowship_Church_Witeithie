@@ -1,10 +1,9 @@
-/** @format */
-
 import React, { useState, useEffect } from 'react';
 import PageHeader from '../components/PageHeader.jsx';
 import EmptyState from '../components/EmptyState.jsx';
 import { Calendar, Clock, MapPin } from 'lucide-react';
 import { API_BASE } from '../context/AppContext.jsx';
+import { assets } from '../assets/assets.js';
 
 const Events = () => {
   const [events, setEvents] = useState([]);
@@ -13,7 +12,7 @@ const Events = () => {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const res = await fetch(`${API_BASE}/events`);
+        const res = await fetch(`${API_BASE}/events`, {headers: {'ngrok-skip-browser-warning': true}});
         if (res.ok) {
           const data = await res.json();
           setEvents(data);
@@ -38,8 +37,9 @@ const Events = () => {
         ) : events.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {events.map((e) => (
-              <div key={e._id} className="bg-white dark:bg-slate-800 rounded-2xl shadow-md border border-slate-100 dark:border-slate-700 p-8 flex flex-col justify-between">
-                <div>
+              <div key={e._id} className="bg-white dark:bg-slate-800 rounded-2xl shadow-md border border-slate-100 dark:border-slate-700 flex flex-col justify-between">
+                <img className='w-full rounded-2xl' src={e.image} />
+                <div className='p-8'>
                   <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">{e.title}</h3>
                   <div className="flex flex-col gap-2.5 my-4">
                     <span className="text-xs font-bold text-slate-400 flex items-center gap-2">

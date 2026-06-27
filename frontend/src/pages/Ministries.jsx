@@ -14,7 +14,7 @@ const Ministries = () => (
         { title: "Sunday School", desc: "Familiarizing our children with the voice of the Spirit, creative scriptures workshops, and foundational values modeling." }
       ].map((item, idx) => (
         <div key={idx} className="bg-white dark:bg-slate-800 rounded-2xl p-8 border border-slate-100 dark:border-slate-700/50 shadow-md">
-          <h3 className="text-2xl font-bold text-[#800000] dark:text-[#87CEEB] mb-3 uppercase tracking-wide">{item.title}</h3>
+          <h3 className="text-2xl font-bold text-[#800000] dark:text-[#448ee4] mb-3 uppercase tracking-wide">{item.title}</h3>
           <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{item.desc}</p>
         </div>
       ))}

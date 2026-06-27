@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { AuthContext, RouteContext, ThemeContext } from "../context/AppContext";
-import { LogIn, LogOut, Menu, Moon, Sun, X } from "lucide-react";
+import { LogIn, LogOut, Menu, Moon, Sun, User, X } from "lucide-react";
 import { assets } from "../assets/assets";
 
 const Navbar = () => {
@@ -43,7 +43,7 @@ const Navbar = () => {
             onClick={() => handleNav('home')}
           >
             <div className="w-15 to-rose-900 rounded-xl flex items-center justify-center text-white font-bold text-xl group-hover:scale-105 transition-all shadow-md">
-              <img src="https://d1csarkz8obe9u.cloudfront.net/uploads/thumbs/b152ba41d77fa8bd52b4c49ec1138bdf.png?" alt="logo" />
+              <img src={assets.logo} alt="logo" />
             </div>
             <div className="flex flex-col">
               <span className="text-[0.9rem] md:text-[1.2rem] font-extrabold text-[#800000] dark:text-slate-100 uppercase tracking-wider">PRIESTHOOD FELLOWSHIP</span>

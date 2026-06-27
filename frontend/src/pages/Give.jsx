@@ -11,7 +11,7 @@ const Give = () => {
       <PageHeader title="Altar Covenant Partnering" subtitle="Support church building expansions and missionary Huduma campaigns." />
       <div className="max-w-3xl mx-auto px-4 py-16">
         <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-8 border-t-4 border-[#800000]">
-          <h3 className="text-2xl font-bold text-center mb-8 text-[#800000] dark:text-[#87CEEB] uppercase tracking-wide">Secured Channels</h3>
+          <h3 className="text-2xl font-bold text-center mb-8 text-[#800000] dark:text-[#448ee4] uppercase tracking-wide">Secured Channels</h3>
           <div className="space-y-6">
             <div className="p-6 border border-slate-150 dark:border-slate-700 rounded-xl flex items-center gap-4">
               <div className="w-12 h-12 bg-green-50 text-green-600 rounded-xl flex items-center justify-center font-extrabold text-lg shrink-0">

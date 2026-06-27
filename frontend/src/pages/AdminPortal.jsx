@@ -1,3 +1,7 @@
+import { Bell, BookOpen, Calendar, ChevronRight, DollarSign, Heart, Mail, Plus, Settings, Shield, User } from "lucide-react";
+import { useEffect, useState } from "react";
+import DashboardWrapper from "../components/DashboardWrapper";
+
 const AdminPortal = () => {
   const [activeTab, setActiveTab] = useState('overview');
   const [metrics, setMetrics] = useState({});
@@ -16,11 +20,13 @@ const AdminPortal = () => {
   const [notDate, setNotDate] = useState('');
   const [notDuration, setNotDuration] = useState('');
   const [notTags, setNotTags] = useState('');
+  const [notUrl, setNotUrl] = useState('');
 
   const [evTitle, setEvTitle] = useState('');
   const [evDate, setEvDate] = useState('');
   const [evLoc, setEvLoc] = useState('');
   const [evDesc, setEvDesc] = useState('');
+  const [evImg, setEvImg] = useState('');
 
   const [notMsg, setNotMsg] = useState('');
 
@@ -42,16 +48,19 @@ const AdminPortal = () => {
     { id: 'prayers', name: 'Pastoral Prayer Book', icon: Heart },
     { id: 'contacts', name: 'Contact Inboxes', icon: Mail },
     { id: 'notices', name: 'Announcements (Notices)', icon: Bell },
-    { id: 'events', name: 'Calendar Scheduling', icon: Calendar },
+    { id: 'events', name: 'Event Scheduling', icon: Calendar },
     { id: 'sermons', name: 'Sermon Library', icon: BookOpen },
     { id: 'slider', name: 'Hero Image Slider', icon: ChevronRight },
   ];
+
+  const API_BASE = import.meta.env.VITE_API_BASE;
 
   const fetchMetrics = async () => {
     const token = localStorage.getItem('pfc-token');
     try {
       const res = await fetch(`${API_BASE}/admin/metrics`, {
-        headers: { 'Authorization': `Bearer ${token}` }
+        headers: { 'Authorization': `Bearer ${token}`,
+      'ngrok-skip-browser-warning': true }
       });
       if (res.ok) {
         const data = await res.json();
@@ -66,7 +75,8 @@ const AdminPortal = () => {
     const token = localStorage.getItem('pfc-token');
     try {
       const res = await fetch(`${API_BASE}/admin/users`, {
-        headers: { 'Authorization': `Bearer ${token}` }
+        headers: { 'Authorization': `Bearer ${token}`,
+      'ngrok-skip-browser-warning': true }
       });
       if (res.ok) {
         const data = await res.json();
@@ -81,7 +91,8 @@ const AdminPortal = () => {
     const token = localStorage.getItem('pfc-token');
     try {
       const res = await fetch(`${API_BASE}/treasurer/giving`, {
-        headers: { 'Authorization': `Bearer ${token}` }
+        headers: { 'Authorization': `Bearer ${token}`,
+      'ngrok-skip-browser-warning': true }
       });
       if (res.ok) {
         const data = await res.json();
@@ -96,7 +107,8 @@ const AdminPortal = () => {
     const token = localStorage.getItem('pfc-token');
     try {
       const res = await fetch(`${API_BASE}/pastor/prayers`, {
-        headers: { 'Authorization': `Bearer ${token}` }
+        headers: { 'Authorization': `Bearer ${token}`,
+      'ngrok-skip-browser-warning': true }
       });
       if (res.ok) {
         const data = await res.json();
@@ -111,7 +123,8 @@ const AdminPortal = () => {
     const token = localStorage.getItem('pfc-token');
     try {
       const res = await fetch(`${API_BASE}/admin/contacts`, {
-        headers: { 'Authorization': `Bearer ${token}` }
+        headers: { 'Authorization': `Bearer ${token}`,
+      'ngrok-skip-browser-warning': true }
       });
       if (res.ok) {
         const data = await res.json();
@@ -124,7 +137,7 @@ const AdminPortal = () => {
 
   const fetchSlides = async () => {
     try {
-      const res = await fetch(`${API_BASE}/slides`);
+      const res = await fetch(`${API_BASE}/slides`, {headers: {'ngrok-skip-browser-warning': true}});
       if (res.ok) {
         const data = await res.json();
         setSlides(data);
@@ -167,7 +180,8 @@ const AdminPortal = () => {
     try {
       const res = await fetch(`${API_BASE}/admin/users/${userId}`, {
         method: 'DELETE',
-        headers: { 'Authorization': `Bearer ${token}` }
+        headers: { 'Authorization': `Bearer ${token}`,
+      'ngrok-skip-browser-warning': true }
       });
       const data = await res.json();
       setFeedback(data.message);
@@ -185,7 +199,8 @@ const AdminPortal = () => {
         method: 'PUT',
         headers: { 
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`
+          'Authorization': `Bearer ${token}`,
+          'ngrok-skip-browser-warning': true
         },
         body: JSON.stringify({ key: editConfigKey, value: editConfigVal })
       });
@@ -207,7 +222,8 @@ const AdminPortal = () => {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`
+          'Authorization': `Bearer ${token}`,
+          'ngrok-skip-browser-warning': true
         },
         body: JSON.stringify({ memberName: conName, email: conEmail, amount: Number(conAmount), purpose: conPurpose })
       });
@@ -230,7 +246,8 @@ const AdminPortal = () => {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`
+          'Authorization': `Bearer ${token}`,
+          'ngrok-skip-browser-warning': true
         },
         body: JSON.stringify({ message: notMsg })
       });
@@ -250,9 +267,10 @@ const AdminPortal = () => {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`
+          'Authorization': `Bearer ${token}`,
+          'ngrok-skip-browser-warning': true
         },
-        body: JSON.stringify({ title: evTitle, date: evDate, location: evLoc, description: evDesc })
+        body: JSON.stringify({ title: evTitle, date: evDate, location: evLoc, description: evDesc, image: evImg })
       });
       const data = await res.json();
       setFeedback(data.message);
@@ -261,7 +279,7 @@ const AdminPortal = () => {
         fetchMetrics();
       }
     } catch (err) {
-      setFeedback('Failed to create calendar convocation.');
+      setFeedback('Failed to create event convocation.');
     }
   };
 
@@ -273,14 +291,15 @@ const AdminPortal = () => {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`
+          'Authorization': `Bearer ${token}`,
+          'ngrok-skip-browser-warning': true
         },
-        body: JSON.stringify({ title: notTitle, preacher: notPreacher, date: notDate, duration: notDuration, tags: notTags.split(',').map(t=>t.trim()) })
+        body: JSON.stringify({ title: notTitle, preacher: notPreacher, date: notDate, duration: notDuration, tags: notTags.split(',').map(t=>t.trim()), video: notUrl })
       });
       const data = await res.json();
       setFeedback(data.message);
       if (res.ok) {
-        setNotTitle(''); setNotPreacher(''); setNotDate(''); setNotDuration(''); setNotTags('');
+        setNotTitle(''); setNotPreacher(''); setNotDate(''); setNotDuration(''); setNotTags(''); setNotUrl('')
         fetchMetrics();
       }
     } catch (err) {
@@ -296,7 +315,8 @@ const AdminPortal = () => {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`
+          'Authorization': `Bearer ${token}`,
+          'ngrok-skip-browser-warning': true
         },
         body: JSON.stringify({ title: slideTitle, subtitle: slideSubtitle, imageUrl: slideUrl })
       });
@@ -318,7 +338,8 @@ const AdminPortal = () => {
         method: 'PUT',
         headers: { 
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`
+          'Authorization': `Bearer ${token}`,
+          'ngrok-skip-browser-warning': true
         },
         body: JSON.stringify({ active: activeStatus })
       });
@@ -333,7 +354,8 @@ const AdminPortal = () => {
     try {
       const res = await fetch(`${API_BASE}/admin/slides/${id}`, {
         method: 'DELETE',
-        headers: { 'Authorization': `Bearer ${token}` }
+        headers: { 'Authorization': `Bearer ${token}`,
+      'ngrok-skip-browser-warning': true }
       });
       if (res.ok) fetchSlides();
     } catch (err) {
@@ -348,7 +370,8 @@ const AdminPortal = () => {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`
+          'Authorization': `Bearer ${token}`,
+          'ngrok-skip-browser-warning': true
         },
         body: JSON.stringify({ status })
       });
@@ -365,7 +388,8 @@ const AdminPortal = () => {
         method: 'PUT',
         headers: { 
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`
+          'Authorization': `Bearer ${token}`,
+          'ngrok-skip-browser-warning': true
         },
         body: JSON.stringify({ read: readStatus })
       });
@@ -379,7 +403,7 @@ const AdminPortal = () => {
     <DashboardWrapper roleTitle="System Administrator" sidebarItems={sidebarItems} currentSubTab={activeTab} onSubTabChange={setActiveTab}>
       <div className="space-y-12">
         {feedback && (
-          <div className="p-4 bg-sky-50 dark:bg-sky-950/40 text-xs font-bold text-[#800000] dark:text-[#87CEEB] rounded-xl text-center">
+          <div className="p-4 bg-sky-50 dark:bg-sky-950/40 text-xs font-bold text-[#800000] dark:text-[#448ee4] rounded-xl text-center">
             {feedback}
           </div>
         )}
@@ -628,7 +652,7 @@ const AdminPortal = () => {
 
         {activeTab === 'events' && (
           <div>
-            <h3 className="text-xl font-bold text-slate-900 dark:text-white uppercase mb-4">Register Gathering Calendar</h3>
+            <h3 className="text-xl font-bold text-slate-900 dark:text-white uppercase mb-4">Register Gathering Event</h3>
             <form onSubmit={handleEventUpload} className="grid grid-cols-1 md:grid-cols-2 gap-4 animate-in">
               <input 
                 type="text" required value={evTitle} onChange={e => setEvTitle(e.target.value)}
@@ -642,6 +666,11 @@ const AdminPortal = () => {
               <input 
                 type="text" required value={evLoc} onChange={e => setEvLoc(e.target.value)}
                 placeholder="Location" 
+                className="px-4 py-3 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl text-sm md:col-span-2"
+              />
+              <input 
+                type="text" required value={evImg} onChange={e => setEvImg(e.target.value)}
+                placeholder="Image Url" 
                 className="px-4 py-3 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl text-sm md:col-span-2"
               />
               <textarea 
@@ -679,6 +708,10 @@ const AdminPortal = () => {
               />
               <input 
                 type="text" required placeholder="Tags (separated by comma)" value={notTags} onChange={e => setNotTags(e.target.value)}
+                className="px-4 py-3 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl text-sm md:col-span-2"
+              />
+              <input 
+                type="text" required placeholder="Video Link (https://youtu.be/...)" value={notUrl} onChange={e => setNotUrl(e.target.value)}
                 className="px-4 py-3 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl text-sm md:col-span-2"
               />
               <button className="px-5 py-3 bg-[#800000] text-white font-bold rounded-xl text-xs uppercase tracking-wide flex items-center gap-2 justify-center w-fit">
@@ -752,3 +785,5 @@ const AdminPortal = () => {
     </DashboardWrapper>
   );
 };
+
+export default AdminPortal

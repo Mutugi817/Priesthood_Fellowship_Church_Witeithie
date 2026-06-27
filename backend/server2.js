@@ -10,7 +10,7 @@
  * 4. Ensure your local MySQL is running with the specified credentials.
  * 5. Run: `node server.js`
  */
-
+import 'dotenv/config'
 import express from 'express';
 import mysql from 'mysql2/promise';
 import cors from 'cors';
@@ -471,7 +471,7 @@ app.use((req, res) => {
 // ============================================================================
 // 5. SERVER INITIALIZATION
 // ============================================================================
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT
 
 app.listen(PORT, async () => {
     console.log(`\n🚀 Server is running on port ${PORT}`);

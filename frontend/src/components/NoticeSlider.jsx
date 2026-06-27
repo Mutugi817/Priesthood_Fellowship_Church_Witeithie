@@ -10,7 +10,7 @@ function NoticeSlider() {
   useEffect(() => {
     const fetchNotices = async () => {
       try {
-        const res = await fetch(`${apiUrl}/notices`);
+        const res = await fetch(`${apiUrl}/notices`, {headers: {'ngrok-skip-browser-warning': true} });
         if (res.ok) {
           const data = await res.json();
           setNotices(data || []);

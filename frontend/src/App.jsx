@@ -1,6 +1,7 @@
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import NoticeSlider from "./components/NoticeSlider";
+import AppRouter from "./components/PageRouter";
 import PageRouter from "./components/PageRouter";
 import { AuthProvider, RouteProvider, ThemeProvider } from "./context/AppContext";
 
@@ -10,14 +11,7 @@ function App() {
             <ThemeProvider>
                 <AuthProvider>
                     <RouteProvider>
-                        <div>
-                            <NoticeSlider />
-                            <Navbar />
-                            <main className="">
-                                <PageRouter />
-                            </main>
-                            <Footer />
-                        </div>
+                        <AppRouter />
                     </RouteProvider>
                 </AuthProvider>
             </ThemeProvider>

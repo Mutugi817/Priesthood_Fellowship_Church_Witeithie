@@ -1,5 +1,3 @@
-/** @format */
-
 import React, { useState, useContext } from 'react';
 import { AuthContext, RouteContext } from '../context/AppContext.jsx';
 import { assets } from '../assets/assets.js';
@@ -16,7 +14,7 @@ const Auth = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
-    e.target.value = "Processing..."
+
     if (isLogin) {
       const result = await login({ email, password });
       if (result.success) {
@@ -39,8 +37,8 @@ const Auth = () => {
     <div className="min-h-[75vh] flex items-center justify-center py-12 px-4 bg-slate-50 dark:bg-slate-950">
       <div className="max-w-md w-full space-y-8 bg-white dark:bg-slate-900 p-10 rounded-3xl shadow-2xl border border-slate-150 dark:border-slate-800">
         <div className='text-center'>
-          <div className="w-20 mx-auto bg-gradient-to-tr from-[#800000] to-rose-950 rounded-xl flex items-center justify-center shadow-lg">
-            <img className="w-20 mx-auto bg-gradient-to-tr from-[#800000] to-rose-950 rounded-xl flex items-center justify-center shadow-lg" src={assets.logo} alt="logo" />
+          <div className="w-20 mx-auto bg-linear-to-tr from-[#800000] to-rose-950 rounded-xl flex items-center justify-center shadow-lg">
+            <img className="w-20 mx-auto bg-linear-to-tr from-[#800000] to-rose-950 rounded-xl flex items-center justify-center shadow-lg" src={assets.logo} alt="logo" />
           </div>
           <h2 className="mt-6 text-3xl font-extrabold text-slate-900 dark:text-white uppercase tracking-tight">
             {isLogin ? 'Ecclesiastical Portal' : 'Register Member Account'}

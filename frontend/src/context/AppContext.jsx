@@ -1,12 +1,10 @@
-/** @format */
-
-import React, { createContext, useState, useEffect } from 'react';
+import { createContext, useState, useEffect } from 'react';
 
 const ThemeContext = createContext();
 const AuthContext = createContext();
 const RouteContext = createContext();
 
-const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:5000/api';
+const API_BASE = import.meta.env.VITE_API_BASE;
 
 const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState('light');
@@ -43,7 +41,8 @@ const AuthProvider = ({ children }) => {
       if (token) {
         try {
           const res = await fetch(`${API_BASE}/auth/me`, {
-            headers: { Authorization: `Bearer ${token}` },
+            headers: {
+              'ngrok-skip-browser-warning': true, Authorization: `Bearer ${token}` },
           });
           if (res.ok) {
             const data = await res.json();
@@ -63,7 +62,9 @@ const AuthProvider = ({ children }) => {
   const login = async (credentials) => {
     const res = await fetch(`${API_BASE}/auth/login`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json',
+        'ngrok-skip-browser-warning': true
+       },
       body: JSON.stringify(credentials),
     });
     const data = await res.json();
@@ -78,7 +79,9 @@ const AuthProvider = ({ children }) => {
   const register = async (payload) => {
     const res = await fetch(`${API_BASE}/auth/register`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json',
+        'ngrok-skip-browser-warning': true
+       },
       body: JSON.stringify(payload),
     });
     if (res.ok) return { success: true };

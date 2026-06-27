@@ -17,7 +17,9 @@ const Contact = () => {
     try {
       const res = await fetch(`${API_BASE}/contact`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json',
+          'ngrok-skip-browser-warning': true
+         },
         body: JSON.stringify({ name, email, message })
       });
       const data = await res.json();
@@ -42,7 +44,7 @@ const Contact = () => {
           <h3 className="text-2xl font-bold mb-6 text-slate-900 dark:text-white uppercase tracking-wide">Send Correspondence</h3>
           <form className="space-y-4" onSubmit={handleSubmit}>
             {statusMsg && (
-              <div className="p-4 bg-sky-50 dark:bg-sky-950/40 text-xs font-bold text-[#800000] dark:text-[#87CEEB] rounded-lg">
+              <div className="p-4 bg-sky-50 dark:bg-sky-950/40 text-xs font-bold text-[#800000] dark:text-[#448ee4] rounded-lg">
                 {statusMsg}
               </div>
             )}

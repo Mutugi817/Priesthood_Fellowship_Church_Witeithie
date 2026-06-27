@@ -1,5 +1,3 @@
-/** @format */
-
 import React, { useContext } from 'react';
 import { AuthContext, RouteContext } from '../context/AppContext.jsx';
 import { LogOut } from 'lucide-react';
@@ -12,7 +10,7 @@ const DashboardWrapper = ({ roleTitle, children, sidebarItems = [], currentSubTa
     <div className="min-h-screen bg-slate-50 dark:bg-slate-950 flex flex-col lg:flex-row">
       <div className="w-full lg:w-72 bg-slate-900 text-white flex flex-col border-r border-slate-800">
         <div className="p-6 border-b border-slate-800 flex items-center gap-3">
-          <div className="w-8 h-8 bg-[#800000] rounded-lg flex items-center justify-center font-bold text-[#87CEEB]">
+          <div className="w-8 h-8 bg-[#800000] rounded-lg flex items-center justify-center font-bold text-[#448ee4]">
             P
           </div>
           <div>
@@ -28,7 +26,7 @@ const DashboardWrapper = ({ roleTitle, children, sidebarItems = [], currentSubTa
                 onClick={() => onSubTabChange(item.id)}
                 className={`p-3.5 rounded-xl font-bold text-sm cursor-pointer transition-all flex items-center gap-3 ${
                   currentSubTab === item.id 
-                    ? 'bg-[#800000] text-white border-l-4 border-[#87CEEB]' 
+                    ? 'bg-[#800000] text-white border-l-4 border-[#448ee4]' 
                     : 'text-slate-400 hover:bg-white/5 hover:text-white'
                 }`}
               >
