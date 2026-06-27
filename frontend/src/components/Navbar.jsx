@@ -35,7 +35,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md shadow-md border-b border-slate-100 dark:border-slate-800 transition-colors duration-300">
+    <nav className="fixed top-0 z-50 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md shadow-md border-b border-slate-100 dark:border-slate-800 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20 items-center">
           <div 
@@ -46,7 +46,7 @@ const Navbar = () => {
               <img src="https://d1csarkz8obe9u.cloudfront.net/uploads/thumbs/b152ba41d77fa8bd52b4c49ec1138bdf.png?" alt="logo" />
             </div>
             <div className="flex flex-col">
-              <span className="text-[0.9rem] font-extrabold text-[#800000] dark:text-slate-100 uppercase tracking-wider">PRIESTHOOD FELLOWSHIP</span>
+              <span className="text-[0.9rem] md:text-xs font-extrabold text-[#800000] dark:text-slate-100 uppercase tracking-wider">PRIESTHOOD FELLOWSHIP</span>
               <span className="text-[0.5rem] text-slate-500 dark:text-slate-400 font-semibold tracking-widest">CHURCH WITEITHIE BRANCH</span>
             </div>
           </div>
