@@ -52,9 +52,9 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-      <div className="flex items-center justify-between max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-slate-800 text-slate-500 text-sm sm:flex-col">
-        <p className='hover:text-[#448ee4] transition-colors'>&copy; {new Date().getFullYear()} Priesthood Fellowship Church Witeithie. All rights reserved. Equipped for ministry.</p>
-        <a className='hover:text-[#448ee4] transition-colors' href="tel:+254115793480" className="text-left">Contact developer: 0115 793 480</a>
+      <div className="flex items-center justify-between max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-slate-800 text-slate-500 text-sm flex-col">
+        <p className='text-xs hover:text-[#448ee4] transition-colors'>&copy; {new Date().getFullYear()} Priesthood Fellowship Church Witeithie. All rights reserved. Equipped for ministry.</p>
+        <a className='text-xs hover:text-[#448ee4] transition-colors' href="tel:+254115793480" className="text-left">Contact developer: 0115 793 480</a>
       </div>
     </footer>
   );
