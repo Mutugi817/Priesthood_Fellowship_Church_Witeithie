@@ -39,7 +39,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20 items-center">
           <div 
-            className="flex-shrink-0 flex items-center gap-3 cursor-pointer group"
+            className="shrink-0 flex items-center gap-3 cursor-pointer group"
             onClick={() => handleNav('home')}
           >
             <div className="w-15 to-rose-900 rounded-xl flex items-center justify-center text-white font-bold text-xl group-hover:scale-105 transition-all shadow-md">
