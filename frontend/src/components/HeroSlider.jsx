@@ -22,7 +22,7 @@ const HeroSlider = () => {
           <img 
             src={s.img} 
             alt={s.title}
-            className="w-full h-full bottom-0 object-cover opacity-35 transform scale-105 transition-transform duration-10000"
+            className="w-full h-full bottom-0 object-cover opacity-35 transform scale-100 transition-transform duration-10000"
           />
           {/* <div className="relative h-full inset-0 bg-linear-to-t from-slate-950 via-slate-900/40 to-transparent" /> */}
           <div className="hero-content absolute inset-0 flex flex-col justify-end pd-8 items-center px-4 text-center max-w-5xl mx-auto z-10 pb-10">
