@@ -45,7 +45,7 @@ function NoticeSlider() {
   }
 
   return (
-    <div className='bg-[#800000] text-slate-100 py-2.5 px-4 text-center text-xs font-semibold tracking-wide border-b border-[#87CEEB]/25 overflow-hidden relative'>
+    <div className='hidden md:block bg-[#800000] text-slate-100 py-2.5 px-4 text-center text-xs font-semibold tracking-wide border-b border-[#87CEEB]/25 overflow-hidden relative'>
       <div className='flex justify-center items-center gap-2 max-w-5xl mx-auto'>
         <Bell
           size={14}
