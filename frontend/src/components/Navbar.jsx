@@ -46,8 +46,8 @@ const Navbar = () => {
               <img src="https://d1csarkz8obe9u.cloudfront.net/uploads/thumbs/b152ba41d77fa8bd52b4c49ec1138bdf.png?" alt="logo" />
             </div>
             <div className="flex flex-col">
-              <span className="text-[1.2rem] font-extrabold text-[#800000] dark:text-slate-100 uppercase tracking-wider">PRIESTHOOD FELLOWSHIP</span>
-              <span className="text-[0.9rem] text-slate-500 dark:text-slate-400 font-semibold tracking-widest">CHURCH WITEITHIE BRANCH</span>
+              <span className="text-[1.9rem] font-extrabold text-[#800000] dark:text-slate-100 uppercase tracking-wider">PRIESTHOOD FELLOWSHIP</span>
+              <span className="text-[0.5rem] text-slate-500 dark:text-slate-400 font-semibold tracking-widest">CHURCH WITEITHIE BRANCH</span>
             </div>
           </div>
 
